@@ -1,11 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+
+import React from 'react'
+import ReactDOM  from 'react-dom/client'
 
 
 function MyThing() {
   return (
     <div>
-      Hello, World!
+      Hello World!
     </div>
   )
 }
@@ -13,28 +14,41 @@ function MyThing() {
 function Book() {
   return (
     <div className='book'>
-      <div className='title'>
-        The Title
-      </div>
-      <div className='author'>
-         The Author
-      </div>
-      <ul className='stats'>
+       <div className='title'>
+          Title
+       </div>
+       <div className='author'>
+          Author
+       </div>
+       <ul className='stats'>
          <li className='rating'>
-           5 stars
+            5 stars
          </li>
          <li className='isbn'>
-           12-345678-22
+           12-45673-67
          </li>
-      </ul>
+       </ul>
     </div>
   )
 }
 
-const root = ReactDOM.createRoot(document.querySelector('#root'));
+function Greetings() {
+  let username = 'root';
+  
+  return (
+    <div>
+      {username ? (undefined || null) : "Not Logged In" }
+      {username === 'root' ? 'Hello ' + username: 'Not Logged in'}
+    </div>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <div>
-    <MyThing /> <Book/>
+    <MyThing />
+    <Book />
+    <Greetings />
   </div>
 )
